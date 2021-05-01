@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-svelte-svelterial",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A plugin for integration with Vite and SvelteKit.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -32,9 +32,6 @@
     "url": "https://github.com/svelterialjs/integrations/issues"
   },
   "homepage": "https://github.com/svelterialjs/integrations#readme",
-  "publishConfig": {
-    "access": "public"
-  },
   "files": [
     "dist"
   ],

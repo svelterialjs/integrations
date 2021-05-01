@@ -13,17 +13,6 @@
     "watch": "rollup -c -w",
     "test": "uvu -r esm test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/svelterialjs/integrations.git",
-    "directory": "packages/utils"
-  },
-  "author": "TheComputerM",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/svelterialjs/integrations/issues"
-  },
-  "homepage": "https://github.com/svelterialjs/integrations#readme",
   "peerDependencies": {
     "sass": "^1.32.12"
   },
