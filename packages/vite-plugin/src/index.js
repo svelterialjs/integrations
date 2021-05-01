@@ -6,6 +6,7 @@ const { readFileSync } = require('fs');
 
 export default (config = {}) => ({
   name: 'vite-plugin-svelte-svelterial',
+  enforce: 'pre',
   sveltePreprocess: {
     script({ content, markup }) {
       const info = parseInfo(markup);
@@ -36,14 +37,10 @@ export default (config = {}) => ({
   load(id) {
     if (id.endsWith('?svelterial')) {
       const location = id.slice(0, -'?svelterial'.length);
-      this.addWatchFile(location);
       const content = readFileSync(location).toString();
       const output = compileSass(content, config, {
         includePaths: [dirname(location)],
       });
-      for (let dep of output.deps) {
-        this.addWatchFile(dep);
-      }
       return output.css;
     }
   },
