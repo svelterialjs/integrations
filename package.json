@@ -1,0 +1,32 @@
+{
+  "name": "integrations",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "fmt": "prettier -w .",
+    "dev": "pnpm dev --filter ./packages",
+    "build": "pnpm build --filter ./packages",
+    "prerelease": "pnpm t",
+    "release": "pnpm build && changeset version",
+    "changeset": "changeset"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svelterialjs/integrations.git"
+  },
+  "author": "TheComputerM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svelterialjs/integrations/issues"
+  },
+  "homepage": "https://github.com/svelterialjs/integrations#readme",
+  "devDependencies": {
+    "@changesets/cli": "^2.16.0",
+    "prettier": "^2.2.1"
+  },
+  "prettier": {
+    "endOfLine": "lf",
+    "quoteProps": "as-needed",
+    "singleQuote": true
+  }
+}

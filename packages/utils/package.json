@@ -1,0 +1,40 @@
+{
+  "name": "@svelterialjs/plugin-utils",
+  "private": true,
+  "version": "1.0.0",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "test": "uvu -r esm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svelterialjs/integrations.git",
+    "directory": "packages/utils"
+  },
+  "author": "TheComputerM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svelterialjs/integrations/issues"
+  },
+  "homepage": "https://github.com/svelterialjs/integrations#readme",
+  "peerDependencies": {
+    "sass": "^1.32.12"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "deepmerge": "^4.2.2",
+    "esm": "^3.2.25",
+    "is-plain-object": "^5.0.0",
+    "rollup": "^2.46.0",
+    "stylis": "^4.0.10",
+    "uvu": "^0.5.1"
+  }
+}
