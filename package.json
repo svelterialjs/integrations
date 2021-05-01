@@ -6,8 +6,8 @@
     "fmt": "prettier -w .",
     "dev": "pnpm dev --filter ./packages",
     "build": "pnpm build --filter ./packages",
-    "prerelease": "pnpm t",
     "release": "pnpm build && changeset version",
+    "postrelease": "pnpm fmt",
     "changeset": "changeset"
   },
   "repository": {
