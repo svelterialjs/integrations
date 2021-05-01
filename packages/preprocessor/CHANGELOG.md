@@ -1,4 +1,4 @@
-# @svelterialjs/processor
+# @svelterialjs/process
 
 ## 0.0.1
 ### Patch Changes

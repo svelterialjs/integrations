@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const processor = require('@svelterialjs/processor');
+const processor = require('@svelterialjs/process');
 
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
