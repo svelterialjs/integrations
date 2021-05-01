@@ -24,14 +24,14 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/svelterialjs/integrations.git",
-    "directory": "packages/vite"
+    "directory": "packages/vite-plugin"
   },
   "author": "TheComputerM",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/svelterialjs/integrations/issues"
   },
-  "homepage": "https://github.com/svelterialjs/integrations#readme",
+  "homepage": "https://github.com/svelterialjs/integrations/tree/main/packages/vite-plugin#readme",
   "files": [
     "dist"
   ],

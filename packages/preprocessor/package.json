@@ -15,18 +15,22 @@
     "build": "rollup -c",
     "dev": "rollup -c -w"
   },
-  "keywords": [],
+  "keywords": [
+    "svelte",
+    "svelterial",
+    "preprocessor"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/svelterialjs/integrations.git",
-    "directory": "packages/processor"
+    "directory": "packages/preprocessor"
   },
   "author": "TheComputerM",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/svelterialjs/integrations/issues"
   },
-  "homepage": "https://github.com/svelterialjs/integrations#readme",
+  "homepage": "https://github.com/svelterialjs/integrations/tree/main/packages/preprocessor#readme",
   "publishConfig": {
     "access": "public"
   },
