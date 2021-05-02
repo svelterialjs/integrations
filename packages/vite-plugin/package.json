@@ -36,7 +36,6 @@
     "dist"
   ],
   "peerDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.9",
     "svelte": "^3.38.0"
   },
   "dependencies": {
