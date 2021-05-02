@@ -1,7 +1,7 @@
 import { compileSass, globalStyles } from '@svelterialjs/plugin-utils';
 import parseInfo from './parseInfo';
 
-const { dirname, join } = require('path');
+const { dirname } = require('path');
 const { readFileSync } = require('fs');
 
 export default (config = {}) => ({
@@ -11,7 +11,7 @@ export default (config = {}) => ({
     script({ content, markup }) {
       const info = parseInfo(markup);
       if (typeof info.svelterial !== 'string') return null;
-      const imported = `import '@svelterial:${info.svelterial}';\n\n`;
+      const imported = `import 'svelterial:${info.svelterial}';\n\n`;
       return {
         code: imported + content,
       };
@@ -27,11 +27,11 @@ export default (config = {}) => ({
       };
     },
   },
-  resolveId(id, importer) {
-    if (id.startsWith('@svelterial:')) {
-      const file = id.slice('@svelterial:'.length);
-      const location = join(dirname(importer), file);
-      return `${location}?svelterial`;
+  async resolveId(id, importer) {
+    if (id.startsWith('svelterial:')) {
+      const file = id.slice('svelterial:'.length);
+      const location = await this.resolve(file, importer);
+      return `${location.id}?svelterial`;
     }
   },
   load(id) {
