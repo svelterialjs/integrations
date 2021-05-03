@@ -4,6 +4,7 @@
   "description": "A plugin for integration with Vite and SvelteKit.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
+  "types": "index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -36,6 +37,7 @@
     "dist"
   ],
   "peerDependencies": {
+    "vite": "^2.2.4",
     "svelte": "^3.38.0"
   },
   "dependencies": {

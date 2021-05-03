@@ -4,6 +4,7 @@
   "description": "A Svelte preprocessor for Svelterial.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
+  "types": "index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
