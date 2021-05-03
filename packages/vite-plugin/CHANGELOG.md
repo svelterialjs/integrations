@@ -1,5 +1,11 @@
 # vite-plugin-svelte-svelterial
 
+## 0.0.4
+
+### Patch Changes
+
+- 12e53f9: add typings
+
 ## 0.0.3
 
 ### Patch Changes
