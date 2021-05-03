@@ -43,6 +43,18 @@ export default defineConfig({
 
 ### with SvelteKit
 
+```js
+{
+  kit: {
+    vite: () => ({
+      plugins: [
+        svelterial({ your_config })
+      ],
+    }),
+  }
+}
+```
+
 ## Run tests
 
 ```sh
