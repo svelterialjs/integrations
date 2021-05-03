@@ -104,7 +104,7 @@ test('import variable map', () => {
 
 test('import single variable', () => {
   const input = [
-    '@use "svelterial/Component" as c;',
+    '@use "svelterial/Component?self" as c;',
     'h1 {color: c.$default}',
   ].join('\n');
 
@@ -120,7 +120,7 @@ test('import single variable', () => {
 
 test('import settings', () => {
   const input = [
-    '@use "svelterial/settings/spacer" as c;',
+    '@use "svelterial/settings/spacer?self" as c;',
     'h1 {font-size: c.$default}',
   ].join('\n');
 

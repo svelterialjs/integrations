@@ -5,11 +5,10 @@ import variableTransformer from './variableTransformer';
 
 const sass = require('sass');
 
-function deepGet(value, keys) {
-  let output = value;
+function deepGet(obj, keys) {
+  let output = obj;
   keys.forEach((key) => {
-    const value = output[key];
-    output = typeof value === 'object' ? value : { default: value };
+    output = output[key];
   });
   return output;
 }
@@ -36,8 +35,11 @@ export default (input, config, options = {}) => {
       (url) => {
         if (isNotSvelterialImport(url)) return null;
 
-        const imported = url.split('/').slice(1);
-        const contents = variableTransformer(deepGet(variables, imported));
+        const [imported, mode] = url.split('?');
+        const keys = imported.split('/').slice(1);
+        const value = deepGet(variables, keys);
+        const output = mode === 'self' ? { default: value } : value;
+        const contents = variableTransformer(output);
         return { contents };
       },
     ],
