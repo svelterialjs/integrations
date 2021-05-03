@@ -1,5 +1,11 @@
 # vite-plugin-svelte-svelterial
 
+## 0.0.5
+
+### Patch Changes
+
+- 38e2e58: fix error when import unknown
+
 ## 0.0.4
 
 ### Patch Changes
