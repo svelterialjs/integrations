@@ -128,4 +128,11 @@ test('import settings', () => {
   equal(css, 'h1{font-size:4px}');
 });
 
+test('no error when import undefined', () => {
+  const input = '@use "svelterial/Component"';
+
+  const { css } = compileSass(input, {});
+  equal(css, '');
+});
+
 test.run();

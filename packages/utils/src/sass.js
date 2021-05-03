@@ -8,7 +8,7 @@ const sass = require('sass');
 function deepGet(obj, keys) {
   let output = obj;
   keys.forEach((key) => {
-    output = output[key];
+    output = output[key] || {};
   });
   return output;
 }
