@@ -68,6 +68,18 @@ importers:
       rollup-plugin-terser: 7.0.2_rollup@2.46.0
       uvu: 0.5.1
 
+  playground/kit:
+    specifiers:
+      '@sveltejs/kit': next
+      svelte: ^3.38.1
+      vite: ^2.2.4
+      vite-plugin-svelte-svelterial: workspace:*
+    devDependencies:
+      '@sveltejs/kit': 1.0.0-next.95_svelte@3.38.1+vite@2.2.4
+      svelte: 3.38.1
+      vite: 2.2.4
+      vite-plugin-svelte-svelterial: link:../../packages/vite-plugin
+
   playground/rollup:
     specifiers:
       '@rollup/plugin-commonjs': ^18.0.0
@@ -79,7 +91,7 @@ importers:
       rollup-plugin-svelte: ^7.1.0
       rollup-plugin-terser: ^7.0.2
       sirv-cli: ^1.0.11
-      svelte: ^3.37.0
+      svelte: ^3.38.1
     dependencies:
       sirv-cli: 1.0.11
     devDependencies:
@@ -89,20 +101,20 @@ importers:
       rollup: 2.46.0
       rollup-plugin-css-only: 3.1.0_rollup@2.46.0
       rollup-plugin-livereload: 2.0.0
-      rollup-plugin-svelte: 7.1.0_rollup@2.46.0+svelte@3.37.0
+      rollup-plugin-svelte: 7.1.0_rollup@2.46.0+svelte@3.38.1
       rollup-plugin-terser: 7.0.2_rollup@2.46.0
-      svelte: 3.37.0
+      svelte: 3.38.1
 
   playground/vite:
     specifiers:
-      '@sveltejs/vite-plugin-svelte': ^1.0.0-next.7
-      svelte: ^3.38.0
-      vite: ^2.2.3
+      '@sveltejs/vite-plugin-svelte': ^1.0.0-next.9
+      svelte: ^3.38.1
+      vite: ^2.2.4
       vite-plugin-svelte-svelterial: workspace:*
     devDependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.9_svelte@3.38.0+vite@2.2.3
-      svelte: 3.38.0
-      vite: 2.2.3
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.9_svelte@3.38.1+vite@2.2.4
+      svelte: 3.38.1
+      vite: 2.2.4
       vite-plugin-svelte-svelterial: link:../../packages/vite-plugin
 
   playground/webpack:
@@ -110,22 +122,22 @@ importers:
       '@svelterialjs/process': workspace:*
       cross-env: ^7.0.3
       css-loader: ^5.2.4
-      mini-css-extract-plugin: ^1.5.1
-      svelte: ^3.37.0
+      mini-css-extract-plugin: ^1.6.0
+      svelte: ^3.38.1
       svelte-loader: ^3.1.1
-      webpack: ^5.36.1
+      webpack: ^5.36.2
       webpack-cli: ^4.6.0
       webpack-dev-server: ^3.11.2
     devDependencies:
       '@svelterialjs/process': link:../../packages/preprocessor
       cross-env: 7.0.3
-      css-loader: 5.2.4_webpack@5.36.1
-      mini-css-extract-plugin: 1.5.1_webpack@5.36.1
-      svelte: 3.37.0
-      svelte-loader: 3.1.1_svelte@3.37.0
-      webpack: 5.36.1_webpack-cli@4.6.0
-      webpack-cli: 4.6.0_93e4ce6c63f3faa3f9bf0a05574b236d
-      webpack-dev-server: 3.11.2_webpack-cli@4.6.0+webpack@5.36.1
+      css-loader: 5.2.4_webpack@5.36.2
+      mini-css-extract-plugin: 1.6.0_webpack@5.36.2
+      svelte: 3.38.1
+      svelte-loader: 3.1.1_svelte@3.38.1
+      webpack: 5.36.2_webpack-cli@4.6.0
+      webpack-cli: 4.6.0_de7b2d3aa15463dc1de8f5d1b75146ad
+      webpack-dev-server: 3.11.2_webpack-cli@4.6.0+webpack@5.36.2
 
 packages:
 
@@ -436,7 +448,25 @@ packages:
       rollup: 2.46.0
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.9_svelte@3.38.0+vite@2.2.3:
+  /@sveltejs/kit/1.0.0-next.95_svelte@3.38.1+vite@2.2.4:
+    resolution: {integrity: sha512-J5RFS3k88Hz/XB/UoZBx2Rd4zUMipPgAKUMCRdXSstzlFJ3Cdw1Ix76sSvWuNwVHVxrOdHV5e1u5trhVAuU6Bw==}
+    engines: {node: '>= 12.17.0'}
+    hasBin: true
+    peerDependencies:
+      svelte: ^3.34.0
+      vite: ^2.2.3
+    dependencies:
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.9_svelte@3.38.1+vite@2.2.4
+      cheap-watch: 1.0.3
+      sade: 1.7.4
+      svelte: 3.38.1
+      vite: 2.2.4
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.9_svelte@3.38.1+vite@2.2.4:
     resolution: {integrity: sha512-ySB/GJsZV3h3jqjq5WIiaxVFkJK6vqtG9gS7Iw6SfUH9ZiFNw5JjQF69g68j9cNep3q4yRIYiG5/pI3YIdXEuA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -450,9 +480,9 @@ packages:
       require-relative: 0.8.7
       slash: 4.0.0
       source-map: 0.7.3
-      svelte: 3.38.0
-      svelte-hmr: 0.14.3_svelte@3.38.0
-      vite: 2.2.3
+      svelte: 3.38.1
+      svelte-hmr: 0.14.3_svelte@3.38.1
+      vite: 2.2.4
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -627,14 +657,14 @@ packages:
       '@xtuc/long': 4.2.2
     dev: true
 
-  /@webpack-cli/configtest/1.0.2_webpack-cli@4.6.0+webpack@5.36.1:
+  /@webpack-cli/configtest/1.0.2_webpack-cli@4.6.0+webpack@5.36.2:
     resolution: {integrity: sha512-3OBzV2fBGZ5TBfdW50cha1lHDVf9vlvRXnjpVbJBa20pSZQaSkMJZiwA8V2vD9ogyeXn8nU5s5A6mHyf5jhMzA==}
     peerDependencies:
       webpack: 4.x.x || 5.x.x
       webpack-cli: 4.x.x
     dependencies:
-      webpack: 5.36.1_webpack-cli@4.6.0
-      webpack-cli: 4.6.0_93e4ce6c63f3faa3f9bf0a05574b236d
+      webpack: 5.36.2_webpack-cli@4.6.0
+      webpack-cli: 4.6.0_de7b2d3aa15463dc1de8f5d1b75146ad
     dev: true
 
   /@webpack-cli/info/1.2.3_webpack-cli@4.6.0:
@@ -643,7 +673,7 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       envinfo: 7.8.1
-      webpack-cli: 4.6.0_93e4ce6c63f3faa3f9bf0a05574b236d
+      webpack-cli: 4.6.0_de7b2d3aa15463dc1de8f5d1b75146ad
     dev: true
 
   /@webpack-cli/serve/1.3.1_54d831f953b37a50bc8cda89801ae0f8:
@@ -655,8 +685,8 @@ packages:
       webpack-dev-server:
         optional: true
     dependencies:
-      webpack-cli: 4.6.0_93e4ce6c63f3faa3f9bf0a05574b236d
-      webpack-dev-server: 3.11.2_webpack-cli@4.6.0+webpack@5.36.1
+      webpack-cli: 4.6.0_de7b2d3aa15463dc1de8f5d1b75146ad
+      webpack-dev-server: 3.11.2_webpack-cli@4.6.0+webpack@5.36.2
     dev: true
 
   /@xtuc/ieee754/1.2.0:
@@ -980,14 +1010,14 @@ packages:
       wcwidth: 1.0.1
     dev: true
 
-  /browserslist/4.16.5:
-    resolution: {integrity: sha512-C2HAjrM1AI/djrpAUU/tr4pml1DqLIzJKSLDBXBrNErl9ZCCTXdhwxdJjYc16953+mBWf7Lw+uUJgpgb8cN71A==}
+  /browserslist/4.16.6:
+    resolution: {integrity: sha512-Wspk/PqO+4W9qp5iUTJsa1B/QrYn1keNCcEP5OvP7WBwT4KaDly0uONYmC6Xa3Z5IqnUgS0KcgLYu1l74x0ZXQ==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001219
+      caniuse-lite: 1.0.30001220
       colorette: 1.2.2
-      electron-to-chromium: 1.3.723
+      electron-to-chromium: 1.3.725
       escalade: 3.1.1
       node-releases: 1.1.71
     dev: true
@@ -1061,8 +1091,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /caniuse-lite/1.0.30001219:
-    resolution: {integrity: sha512-c0yixVG4v9KBc/tQ2rlbB3A/bgBFRvl8h8M4IeUbqCca4gsiCfvtaheUssbnux/Mb66Vjz7x8yYjDgYcNQOhyQ==}
+  /caniuse-lite/1.0.30001220:
+    resolution: {integrity: sha512-pjC2T4DIDyGAKTL4dMvGUQaMUHRmhvPpAgNNTa14jaBWHu+bLQgvpFqElxh9L4829Fdx0PlKiMp3wnYldRtECA==}
     dev: true
 
   /chalk/2.4.2:
@@ -1092,6 +1122,11 @@ packages:
 
   /chardet/0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
+    dev: true
+
+  /cheap-watch/1.0.3:
+    resolution: {integrity: sha512-xC5CruMhLzjPwJ5ecUxGu1uGmwJQykUhqd2QrCrYbwvsFYdRyviu6jG9+pccwDXJR/OpmOTOJ9yLFunVgQu9wg==}
+    engines: {node: '>=8'}
     dev: true
 
   /chokidar/2.1.8:
@@ -1331,7 +1366,7 @@ packages:
       which: 2.0.2
     dev: true
 
-  /css-loader/5.2.4_webpack@5.36.1:
+  /css-loader/5.2.4_webpack@5.36.2:
     resolution: {integrity: sha512-OFYGyINCKkdQsTrSYxzGSFnGS4gNjcXkKkQgWxK138jgnPt+lepxdjSZNc8sHAl5vP3DhsJUxufWIjOwI8PMMw==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -1348,7 +1383,7 @@ packages:
       postcss-value-parser: 4.1.0
       schema-utils: 3.0.0
       semver: 7.3.5
-      webpack: 5.36.1_webpack-cli@4.6.0
+      webpack: 5.36.2_webpack-cli@4.6.0
     dev: true
 
   /cssesc/3.0.0:
@@ -1562,8 +1597,8 @@ packages:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: true
 
-  /electron-to-chromium/1.3.723:
-    resolution: {integrity: sha512-L+WXyXI7c7+G1V8ANzRsPI5giiimLAUDC6Zs1ojHHPhYXb3k/iTABFmWjivEtsWrRQymjnO66/rO2ZTABGdmWg==}
+  /electron-to-chromium/1.3.725:
+    resolution: {integrity: sha512-2BbeAESz7kc6KBzs7WVrMc1BY5waUphk4D4DX5dSQXJhsc3tP5ZFaiyuL0AB7vUKzDYpIeYwTYlEfxyjsGUrhw==}
     dev: true
 
   /emoji-regex/7.0.3:
@@ -2940,15 +2975,15 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /mini-css-extract-plugin/1.5.1_webpack@5.36.1:
-    resolution: {integrity: sha512-wEpr0XooH6rw/Mlf+9KTJoMBLT3HujzdTrmohPjAzF47N4Q6yAeczQLpRD/WxvAtXvskcXbily7TAdCfi2M4Dg==}
+  /mini-css-extract-plugin/1.6.0_webpack@5.36.2:
+    resolution: {integrity: sha512-nPFKI7NSy6uONUo9yn2hIfb9vyYvkFu95qki0e21DQ9uaqNKDP15DGpK0KnV6wDroWxPHtExrdEwx/yDQ8nVRw==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
       webpack: ^4.4.0 || ^5.0.0
     dependencies:
       loader-utils: 2.0.0
       schema-utils: 3.0.0
-      webpack: 5.36.1_webpack-cli@4.6.0
+      webpack: 5.36.2_webpack-cli@4.6.0
       webpack-sources: 1.4.3
     dev: true
 
@@ -3764,7 +3799,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /rollup-plugin-svelte/7.1.0_rollup@2.46.0+svelte@3.37.0:
+  /rollup-plugin-svelte/7.1.0_rollup@2.46.0+svelte@3.38.1:
     resolution: {integrity: sha512-vopCUq3G+25sKjwF5VilIbiY6KCuMNHP1PFvx2Vr3REBNMDllKHFZN2B9jwwC+MqNc3UPKkjXnceLPEjTjXGXg==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -3774,7 +3809,7 @@ packages:
       require-relative: 0.8.7
       rollup: 2.46.0
       rollup-pluginutils: 2.8.2
-      svelte: 3.37.0
+      svelte: 3.38.1
     dev: true
 
   /rollup-plugin-terser/7.0.2_rollup@2.46.0:
@@ -4344,40 +4379,35 @@ packages:
     resolution: {integrity: sha1-fRh9tcbNu9ZNdaMvkbiZi94yc8M=}
     dev: true
 
-  /svelte-hmr/0.12.9_svelte@3.37.0:
+  /svelte-hmr/0.12.9_svelte@3.38.1:
     resolution: {integrity: sha512-SGE7Odznj4dqZtUVIWcoPCvZ9gHImxVIIjrz+O3DDSi0j4OaSLim6MRF4UdhlBKeW3glSRc+tXNSKYvM5x+Dyw==}
     peerDependencies:
       svelte: '>=3.19.0'
     dependencies:
-      svelte: 3.37.0
+      svelte: 3.38.1
     dev: true
 
-  /svelte-hmr/0.14.3_svelte@3.38.0:
+  /svelte-hmr/0.14.3_svelte@3.38.1:
     resolution: {integrity: sha512-N56xX405zLMw2tpGHKRx5h+kmdeZwxI21pvyC6OyBHJDCF6DlwWBm9TifdQmSD4dloWSmpDPzHWYa3CSjfopUg==}
     peerDependencies:
       svelte: '>=3.19.0'
     dependencies:
-      svelte: 3.38.0
+      svelte: 3.38.1
     dev: true
 
-  /svelte-loader/3.1.1_svelte@3.37.0:
+  /svelte-loader/3.1.1_svelte@3.38.1:
     resolution: {integrity: sha512-JU7qo1yBdDeJ3Aw23WoGKXrVaSn3KeWkM9KMl43HuMVFrsPNHIzZHTsf1ARJX/Abm3jeqNjigaO35RVbixhmWg==}
     peerDependencies:
       svelte: '>3.0.0'
     dependencies:
       loader-utils: 2.0.0
-      svelte: 3.37.0
+      svelte: 3.38.1
       svelte-dev-helper: 1.1.9
-      svelte-hmr: 0.12.9_svelte@3.37.0
+      svelte-hmr: 0.12.9_svelte@3.38.1
     dev: true
 
-  /svelte/3.37.0:
-    resolution: {integrity: sha512-TRF30F4W4+d+Jr2KzUUL1j8Mrpns/WM/WacxYlo5MMb2E5Qy2Pk1Guj6GylxsW9OnKQl1tnF8q3hG/hQ3h6VUA==}
-    engines: {node: '>= 8'}
-    dev: true
-
-  /svelte/3.38.0:
-    resolution: {integrity: sha512-V0CbyzvXEka7zQtRYt++cpPh0zxxDUTIeNlq4KncGXn2qHnQFZ2i4L4+2QOfLwOudb9cewJeegupBQcscnBaaA==}
+  /svelte/3.38.1:
+    resolution: {integrity: sha512-N3XLAyfzqrFxwRLevBeW7Dke9ZlHRVGSIed5abo4Drvj+zvd2OyWpFa1x4nQUc8Lnvt4Kcn8/5le1peRDybNqg==}
     engines: {node: '>= 8'}
     dev: true
 
@@ -4398,7 +4428,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /terser-webpack-plugin/5.1.1_webpack@5.36.1:
+  /terser-webpack-plugin/5.1.1_webpack@5.36.2:
     resolution: {integrity: sha512-5XNNXZiR8YO6X6KhSGXfY0QrGrCRlSwAEjIIrlRQR4W8nP69TaJUlh3bkuac6zzgspiGPfKEHcY295MMVExl5Q==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -4410,7 +4440,7 @@ packages:
       serialize-javascript: 5.0.1
       source-map: 0.6.1
       terser: 5.7.0
-      webpack: 5.36.1_webpack-cli@4.6.0
+      webpack: 5.36.2_webpack-cli@4.6.0
     dev: true
 
   /terser/5.7.0:
@@ -4631,8 +4661,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite/2.2.3:
-    resolution: {integrity: sha512-PtjyBL4GtACM+uT5q5hi2+AlMBbb6YI2b2bam6QI8ZdZt4FezseF0yZHQx0G+b3po9jIJ/GS5N9gc5Yq9Rue7g==}
+  /vite/2.2.4:
+    resolution: {integrity: sha512-vnIwSNci+phFMp6krhy+FbYzKL0R67Sdt9mVZ96S27AewrApSJjTqncJcalk8sf60BgcbW4+1C6DFIWkxquO9g==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -4664,7 +4694,7 @@ packages:
       defaults: 1.0.3
     dev: true
 
-  /webpack-cli/4.6.0_93e4ce6c63f3faa3f9bf0a05574b236d:
+  /webpack-cli/4.6.0_de7b2d3aa15463dc1de8f5d1b75146ad:
     resolution: {integrity: sha512-9YV+qTcGMjQFiY7Nb1kmnupvb1x40lfpj8pwdO/bom+sQiP4OBMKjHq29YQrlDWDPZO9r/qWaRRywKaRDKqBTA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
@@ -4685,7 +4715,7 @@ packages:
         optional: true
     dependencies:
       '@discoveryjs/json-ext': 0.5.2
-      '@webpack-cli/configtest': 1.0.2_webpack-cli@4.6.0+webpack@5.36.1
+      '@webpack-cli/configtest': 1.0.2_webpack-cli@4.6.0+webpack@5.36.2
       '@webpack-cli/info': 1.2.3_webpack-cli@4.6.0
       '@webpack-cli/serve': 1.3.1_54d831f953b37a50bc8cda89801ae0f8
       colorette: 1.2.2
@@ -4697,12 +4727,12 @@ packages:
       interpret: 2.2.0
       rechoir: 0.7.0
       v8-compile-cache: 2.3.0
-      webpack: 5.36.1_webpack-cli@4.6.0
-      webpack-dev-server: 3.11.2_webpack-cli@4.6.0+webpack@5.36.1
+      webpack: 5.36.2_webpack-cli@4.6.0
+      webpack-dev-server: 3.11.2_webpack-cli@4.6.0+webpack@5.36.2
       webpack-merge: 5.7.3
     dev: true
 
-  /webpack-dev-middleware/3.7.3_webpack@5.36.1:
+  /webpack-dev-middleware/3.7.3_webpack@5.36.2:
     resolution: {integrity: sha512-djelc/zGiz9nZj/U7PTBi2ViorGJXEWo/3ltkPbDyxCXhhEXkW0ce99falaok4TPj+AsxLiXJR0EBOb0zh9fKQ==}
     engines: {node: '>= 6'}
     peerDependencies:
@@ -4712,11 +4742,11 @@ packages:
       mime: 2.5.2
       mkdirp: 0.5.5
       range-parser: 1.2.1
-      webpack: 5.36.1_webpack-cli@4.6.0
+      webpack: 5.36.2_webpack-cli@4.6.0
       webpack-log: 2.0.0
     dev: true
 
-  /webpack-dev-server/3.11.2_webpack-cli@4.6.0+webpack@5.36.1:
+  /webpack-dev-server/3.11.2_webpack-cli@4.6.0+webpack@5.36.2:
     resolution: {integrity: sha512-A80BkuHRQfCiNtGBS1EMf2ChTUs0x+B3wGDFmOeT4rmJOHhHTCH2naNxIHhmkr0/UillP4U3yeIyv1pNp+QDLQ==}
     engines: {node: '>= 6.11.5'}
     hasBin: true
@@ -4756,9 +4786,9 @@ packages:
       strip-ansi: 3.0.1
       supports-color: 6.1.0
       url: 0.11.0
-      webpack: 5.36.1_webpack-cli@4.6.0
-      webpack-cli: 4.6.0_93e4ce6c63f3faa3f9bf0a05574b236d
-      webpack-dev-middleware: 3.7.3_webpack@5.36.1
+      webpack: 5.36.2_webpack-cli@4.6.0
+      webpack-cli: 4.6.0_de7b2d3aa15463dc1de8f5d1b75146ad
+      webpack-dev-middleware: 3.7.3_webpack@5.36.2
       webpack-log: 2.0.0
       ws: 6.2.1
       yargs: 13.3.2
@@ -4795,8 +4825,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /webpack/5.36.1_webpack-cli@4.6.0:
-    resolution: {integrity: sha512-2u25a82T+6quAxSlzEpN/R/RICwt20ONU3z3Ko05S8KVH9FXILcBYb2hD/rQtZT5y7lRAIsIIs05pdndY7ourQ==}
+  /webpack/5.36.2_webpack-cli@4.6.0:
+    resolution: {integrity: sha512-XJumVnnGoH2dV+Pk1VwgY4YT6AiMKpVoudUFCNOXMIVrEKPUgEwdIfWPjIuGLESAiS8EdIHX5+TiJz/5JccmRg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -4811,7 +4841,7 @@ packages:
       '@webassemblyjs/wasm-edit': 1.11.0
       '@webassemblyjs/wasm-parser': 1.11.0
       acorn: 8.2.2
-      browserslist: 4.16.5
+      browserslist: 4.16.6
       chrome-trace-event: 1.0.3
       enhanced-resolve: 5.8.0
       es-module-lexer: 0.4.1
@@ -4825,9 +4855,9 @@ packages:
       neo-async: 2.6.2
       schema-utils: 3.0.0
       tapable: 2.2.0
-      terser-webpack-plugin: 5.1.1_webpack@5.36.1
+      terser-webpack-plugin: 5.1.1_webpack@5.36.2
       watchpack: 2.1.1
-      webpack-cli: 4.6.0_93e4ce6c63f3faa3f9bf0a05574b236d
+      webpack-cli: 4.6.0_de7b2d3aa15463dc1de8f5d1b75146ad
       webpack-sources: 2.2.0
     dev: true
 
