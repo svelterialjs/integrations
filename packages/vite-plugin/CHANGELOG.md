@@ -1,5 +1,11 @@
 # vite-plugin-svelte-svelterial
 
+## 0.0.6
+
+### Patch Changes
+
+- 15b4860: better support for esm configs
+
 ## 0.0.5
 
 ### Patch Changes
