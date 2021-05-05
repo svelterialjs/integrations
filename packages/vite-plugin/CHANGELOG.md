@@ -1,5 +1,11 @@
 # vite-plugin-svelte-svelterial
 
+## 0.0.7
+
+### Patch Changes
+
+- 35f4ddb: remove all cjs require statements
+
 ## 0.0.6
 
 ### Patch Changes

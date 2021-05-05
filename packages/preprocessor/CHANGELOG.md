@@ -1,5 +1,11 @@
 # @svelterialjs/process
 
+## 0.0.5
+
+### Patch Changes
+
+- 35f4ddb: remove all cjs require statements
+
 ## 0.0.4
 
 ### Patch Changes
