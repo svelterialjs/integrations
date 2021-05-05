@@ -2,8 +2,7 @@ import deepmerge from 'deepmerge';
 import defaultSettings from './defaultSettings';
 import defaultTheme from './defaultTheme';
 import variableTransformer from './variableTransformer';
-
-const sass = require('sass');
+import sass from 'sass';
 
 function deepGet(obj, keys) {
   let output = obj;

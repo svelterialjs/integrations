@@ -8,4 +8,5 @@ export default {
     format: 'es',
   },
   plugins: [nodeResolve(), commonjs()],
+  external: ['sass'],
 };

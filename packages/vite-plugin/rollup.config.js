@@ -16,4 +16,5 @@ export default {
     },
   ],
   plugins: [nodeResolve(), commonjs(), !process.env.ROLLUP_WATCH && terser()],
+  external: ['sass']
 };

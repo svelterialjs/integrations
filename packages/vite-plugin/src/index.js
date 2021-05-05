@@ -1,8 +1,7 @@
 import { compileSass, globalStyles } from '@svelterialjs/plugin-utils';
 import parseInfo from './parseInfo';
-
-const { dirname } = require('path');
-const { readFileSync } = require('fs');
+import { dirname } from 'path';
+import { readFileSync } from 'fs';
 
 export default (config = {}) => ({
   name: 'vite-plugin-svelte-svelterial',

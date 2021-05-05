@@ -1,4 +1,4 @@
-const { dirname } = require('path');
+import { dirname } from 'path';
 import { compileSass, globalStyles } from '@svelterialjs/plugin-utils';
 
 export default (config = {}) => ({
