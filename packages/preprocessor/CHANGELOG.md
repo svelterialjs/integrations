@@ -1,5 +1,11 @@
 # @svelterialjs/process
 
+## 0.0.6
+
+### Patch Changes
+
+- fb8cd59: fix keyframes bug
+
 ## 0.0.5
 
 ### Patch Changes

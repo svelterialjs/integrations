@@ -1,5 +1,11 @@
 # vite-plugin-svelte-svelterial
 
+## 0.0.8
+
+### Patch Changes
+
+- fb8cd59: fix keyframes bug
+
 ## 0.0.7
 
 ### Patch Changes
