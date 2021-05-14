@@ -10,10 +10,7 @@ test('selectors', async () => {
     globalStyles('.a, b, c.d {color: red;}'),
     ':global(.a),:global(b),:global(c.d){color:red;}'
   );
-  snapshot(
-    globalStyles('.a b {color: red;}'),
-    ':global(.a b){color:red;}'
-  );
+  snapshot(globalStyles('.a b {color: red;}'), ':global(.a b){color:red;}');
   snapshot(
     globalStyles('.a:hover {color: red;}'),
     ':global(.a:hover){color:red;}'
