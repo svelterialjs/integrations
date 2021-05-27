@@ -1,10 +1,13 @@
-import { test } from 'uvu';
+import { test, suite } from 'uvu';
 import { snapshot } from 'uvu/assert';
 import globalStyles from '../src/globalStyles';
 import transform from '../src/variableTransformer';
 import compileSass from '../src/sass';
+import optimizeImports from '../src/optimizeImports';
 
-test('selectors', async () => {
+const GlobalStyles = suite('GlobalStyles');
+
+GlobalStyles('selectors', async () => {
   snapshot(globalStyles('a {display: flex;}'), ':global(a){display:flex;}');
   snapshot(
     globalStyles('.a, b, c.d {color: red;}'),
@@ -17,7 +20,7 @@ test('selectors', async () => {
   );
 });
 
-test('keyframes', async () => {
+GlobalStyles('keyframes', async () => {
   snapshot(
     globalStyles(
       ['@keyframes a {', 'from {top: 0px;}', 'to {top: 200px;}', '}'].join('\n')
@@ -39,7 +42,11 @@ test('keyframes', async () => {
   );
 });
 
-test('string', () => {
+GlobalStyles.run();
+
+const VarTransform = suite('VarTransform');
+
+VarTransform('string', () => {
   const values = {
     color: 'red',
   };
@@ -47,7 +54,7 @@ test('string', () => {
   snapshot(transform(values), '$color: red;');
 });
 
-test('string with comma', () => {
+VarTransform('string with comma', () => {
   const values = {
     shadow: '5px 5px blue, 10px 10px red, 15px 15px green',
   };
@@ -58,7 +65,7 @@ test('string with comma', () => {
   );
 });
 
-test('boolean', () => {
+VarTransform('boolean', () => {
   const values = {
     visible: true,
   };
@@ -66,7 +73,7 @@ test('boolean', () => {
   snapshot(transform(values), '$visible: true;');
 });
 
-test('number', () => {
+VarTransform('number', () => {
   const values = {
     amount: 12,
   };
@@ -74,7 +81,7 @@ test('number', () => {
   snapshot(transform(values), '$amount: 12;');
 });
 
-test('array', () => {
+VarTransform('array', () => {
   const values = {
     colors: ['red', 'blue', 'green'],
   };
@@ -82,7 +89,7 @@ test('array', () => {
   snapshot(transform(values), '$colors: (red,blue,green);');
 });
 
-test('maps', () => {
+VarTransform('maps', () => {
   const values = {
     sizes: {
       sm: '200px',
@@ -94,7 +101,7 @@ test('maps', () => {
   snapshot(transform(values), '$sizes: (sm: 200px,md: 400px,lg: 800px);');
 });
 
-test('nested', () => {
+VarTransform('nested', () => {
   const values = {
     a: {
       b: {
@@ -107,17 +114,19 @@ test('nested', () => {
   snapshot(transform(values), '$a: (b: (c: d));\n$e: f;');
 });
 
-test('import variable map', () => {
+VarTransform.run();
+
+const CSSTransform = suite('CSSTransform');
+
+CSSTransform('import variable map', () => {
   const input = [
     '@use "svelterial/Component" as c;',
     'h1 {color: c.$color}',
   ].join('\n');
 
   const config = {
-    variables: {
-      Component: {
-        color: 'red',
-      },
+    Component: {
+      color: 'red',
     },
   };
 
@@ -125,37 +134,34 @@ test('import variable map', () => {
   snapshot(css, 'h1{color:red}');
 });
 
-test('import single variable', () => {
+CSSTransform('import single variable', () => {
   const input = [
     '@use "svelterial/Component?self" as c;',
     'h1 {color: c.$default}',
   ].join('\n');
 
   const config = {
-    variables: {
-      Component: 'red',
-    },
+    Component: 'red',
   };
 
   const { css } = compileSass(input, config);
   snapshot(css, 'h1{color:red}');
 });
 
-test('import settings', () => {
-  const input = [
-    '@use "svelterial/settings/spacer?self" as c;',
-    'h1 {font-size: c.$default}',
-  ].join('\n');
-
-  const { css } = compileSass(input, {});
-  snapshot(css, 'h1{font-size:4px}');
-});
-
-test('no error when import undefined', () => {
+CSSTransform('no error when import undefined', () => {
   const input = '@use "svelterial/Component"';
 
   const { css } = compileSass(input, {});
   snapshot(css, '');
 });
 
-test.run();
+CSSTransform.run();
+
+const OptimizeImports = suite('OptimizeImports');
+
+OptimizeImports('basic imports', () => {
+  const input = 'import {Component} from "@svelterialjs/core"';
+  snapshot(optimizeImports(input), '');
+});
+
+OptimizeImports.run();

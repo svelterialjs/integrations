@@ -1,0 +1,19 @@
+{
+  "name": "@svelterialjs/plugin-utils",
+  "private": true,
+  "version": "1.0.0",
+  "module": "src/index.js",
+  "scripts": {
+    "test": "uvu -r esm test"
+  },
+  "peerDependencies": {
+    "sass": "^1.32.12",
+    "svelte": "^3.38.2"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "is-plain-object": "^5.0.0",
+    "stylis": "^4.0.10",
+    "uvu": "^0.5.1"
+  }
+}

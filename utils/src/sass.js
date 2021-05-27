@@ -1,6 +1,3 @@
-import deepmerge from 'deepmerge';
-import defaultSettings from './defaultSettings';
-import defaultTheme from './defaultTheme';
 import variableTransformer from './variableTransformer';
 import sass from 'sass';
 
@@ -18,11 +15,6 @@ function deepGet(obj, keys) {
  * @param {object} options options to pass to the sass compiler
  */
 export default (input, config, options = {}) => {
-  const variables = {
-    ...(config.variables || {}),
-    settings: deepmerge(defaultSettings, config.settings || {}),
-    themes: deepmerge(defaultTheme, config.themes || {}),
-  };
   const isNotSvelterialImport = (url) => !url.startsWith('svelterial/');
   const result = sass.renderSync({
     data: input,
@@ -36,7 +28,7 @@ export default (input, config, options = {}) => {
 
         const [imported, mode] = url.split('?');
         const keys = imported.split('/').slice(1);
-        const value = deepGet(variables, keys);
+        const value = deepGet(config, keys);
         const output = mode === 'self' ? { default: value } : value;
         const contents = variableTransformer(output);
         return { contents };
