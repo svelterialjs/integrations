@@ -2,19 +2,18 @@
   "name": "vite-plugin-svelte-svelterial",
   "version": "0.0.8",
   "description": "A plugin for integration with Vite and SvelteKit.",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "types": "index.d.ts",
+  "umd:main": "dist/index.umd.js",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs",
-      "node": "./dist/index.cjs"
+      "import": "./dist/index.modern.js",
+      "default": "./dist/index.js"
     }
   },
   "scripts": {
-    "dev": "rollup -c -w",
-    "build": "rollup -c",
+    "build": "microbundle src/index.js",
+    "dev": "microbundle watch src/index.js",
     "test": "uvu -r esm test"
   },
   "keywords": [
@@ -41,15 +40,12 @@
     "vite": "^2.2.4"
   },
   "dependencies": {
-    "sass": "^1.32.13"
+    "sass": "^1.34.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "@svelterialjs/plugin-utils": "workspace:^",
+    "@svelterialjs/plugin-utils": "workspace:*",
     "esm": "^3.2.25",
-    "rollup": "^2.48.0",
-    "rollup-plugin-terser": "^7.0.2",
+    "microbundle": "^0.13.1",
     "uvu": "^0.5.1"
   }
 }

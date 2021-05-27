@@ -2,19 +2,18 @@
   "name": "@svelterialjs/process",
   "version": "0.0.6",
   "description": "A Svelte preprocessor for Svelterial.",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "types": "index.d.ts",
+  "umd:main": "dist/index.umd.js",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs",
-      "node": "./dist/index.cjs"
+      "import": "./dist/index.modern.js",
+      "default": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "build": "microbundle src/index.js",
+    "dev": "microbundle watch src/index.js"
   },
   "keywords": [
     "svelte",
@@ -38,14 +37,14 @@
   "files": [
     "dist"
   ],
+  "peerDependencies": {
+    "svelte": "^3.38.2"
+  },
   "dependencies": {
-    "sass": "^1.32.13"
+    "sass": "^1.34.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "@svelterialjs/plugin-utils": "workspace:^",
-    "rollup": "^2.48.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "@svelterialjs/plugin-utils": "workspace:*",
+    "microbundle": "^0.13.1"
   }
 }
