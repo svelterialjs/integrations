@@ -10,7 +10,7 @@
   "devDependencies": {
     "@sveltejs/kit": "next",
     "svelte": "^3.38.2",
-    "vite-plugin-svelte-svelterial": "workspace:^"
+    "vite-plugin-svelte-svelterial": "workspace:*"
   },
   "type": "module"
 }

@@ -6,10 +6,8 @@ export default defineConfig({
   plugins: [
     svelte(),
     svelterial({
-      variables: {
-        Component: {
-          color: 'green',
-        },
+      Component: {
+        color: 'green',
       },
     }),
   ],

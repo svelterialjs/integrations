@@ -48,10 +48,8 @@ export default {
         dev: !production,
       },
       preprocess: processor({
-        variables: {
-          Component: {
-            color: 'red',
-          },
+        Component: {
+          color: 'red',
         },
       }),
     }),

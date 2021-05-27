@@ -7,10 +7,8 @@ export default {
     vite: () => ({
       plugins: [
         svelterial({
-          variables: {
-            Component: {
-              color: 'red',
-            },
+          Component: {
+            color: 'red',
           },
         }),
       ],

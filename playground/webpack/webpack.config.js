@@ -34,10 +34,8 @@ module.exports = {
             emitCss: prod,
             hotReload: !prod,
             preprocess: processor({
-              variables: {
-                Component: {
-                  color: 'red',
-                },
+              Component: {
+                color: 'red',
               },
             }),
           },
