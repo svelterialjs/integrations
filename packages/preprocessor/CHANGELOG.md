@@ -1,5 +1,11 @@
 # @svelterialjs/process
 
+## 0.0.7
+
+### Patch Changes
+
+- ef8e87a: Remove default settings and themes from plugin
+
 ## 0.0.6
 
 ### Patch Changes

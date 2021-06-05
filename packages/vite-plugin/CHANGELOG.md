@@ -1,5 +1,11 @@
 # vite-plugin-svelte-svelterial
 
+## 0.0.9
+
+### Patch Changes
+
+- ef8e87a: Remove default settings and themes from plugin
+
 ## 0.0.8
 
 ### Patch Changes
