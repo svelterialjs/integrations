@@ -3,7 +3,6 @@ import { snapshot } from 'uvu/assert';
 import globalStyles from '../src/globalStyles';
 import transform from '../src/variableTransformer';
 import compileSass from '../src/sass';
-import optimizeImports from '../src/optimizeImports';
 
 const GlobalStyles = suite('GlobalStyles');
 
@@ -156,12 +155,3 @@ CSSTransform('no error when import undefined', () => {
 });
 
 CSSTransform.run();
-
-const OptimizeImports = suite('OptimizeImports');
-
-OptimizeImports('basic imports', () => {
-  const input = 'import {Component} from "@svelterialjs/core"';
-  snapshot(optimizeImports(input), '');
-});
-
-OptimizeImports.run();
