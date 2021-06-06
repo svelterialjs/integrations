@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-svelte-svelterial",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A plugin for integration with Vite and SvelteKit.",
   "source": "src/index.js",
   "main": "dist/index.cjs",

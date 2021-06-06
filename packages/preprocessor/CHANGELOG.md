@@ -1,5 +1,11 @@
 # @svelterialjs/process
 
+## 0.0.8
+
+### Patch Changes
+
+- 075e1d3: update output structure of packages
+
 ## 0.0.7
 
 ### Patch Changes
