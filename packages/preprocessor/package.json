@@ -2,18 +2,22 @@
   "name": "@svelterialjs/process",
   "version": "0.0.7",
   "description": "A Svelte preprocessor for Svelterial.",
-  "main": "dist/index.js",
+  "source": "src/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "umd:main": "dist/index.umd.js",
+  "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.modern.js",
-      "default": "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.cjs"
+    },
+    "./dist/": {
+      "default": "./dist/"
     }
   },
   "scripts": {
-    "build": "microbundle src/index.js",
-    "dev": "microbundle watch src/index.js"
+    "build": "microbundle -f cjs,esm",
+    "dev": "microbundle watch -f cjs,esm"
   },
   "keywords": [
     "svelte",

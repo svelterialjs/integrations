@@ -2,18 +2,22 @@
   "name": "vite-plugin-svelte-svelterial",
   "version": "0.0.9",
   "description": "A plugin for integration with Vite and SvelteKit.",
-  "main": "dist/index.js",
+  "source": "src/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "umd:main": "dist/index.umd.js",
   "exports": {
     ".": {
-      "import": "./dist/index.modern.js",
-      "default": "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.cjs"
+    },
+    "./dist/": {
+      "default": "./dist/"
     }
   },
+  "type": "module",
   "scripts": {
-    "build": "microbundle src/index.js",
-    "dev": "microbundle watch src/index.js",
+    "build": "microbundle -f cjs,esm",
+    "dev": "microbundle watch -f cjs,esm",
     "test": "uvu -r esm test"
   },
   "keywords": [
