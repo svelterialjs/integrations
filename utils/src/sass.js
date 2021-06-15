@@ -26,11 +26,9 @@ export default (input, config, options = {}) => {
       (url) => {
         if (isNotSvelterialImport(url)) return null;
 
-        const [imported, mode] = url.split('?');
-        const keys = imported.split('/').slice(1);
+        const keys = url.split('/').slice(1);
         const value = deepGet(config, keys);
-        const output = mode === 'self' ? { default: value } : value;
-        const contents = variableTransformer(output);
+        const contents = variableTransformer(value);
         return { contents };
       },
     ],

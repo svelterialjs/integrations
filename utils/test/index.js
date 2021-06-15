@@ -1,4 +1,4 @@
-import { test, suite } from 'uvu';
+import { suite } from 'uvu';
 import { snapshot } from 'uvu/assert';
 import globalStyles from '../src/globalStyles';
 import transform from '../src/variableTransformer';
@@ -115,9 +115,9 @@ VarTransform('nested', () => {
 
 VarTransform.run();
 
-const CSSTransform = suite('CSSTransform');
+const Importer = suite('Importer');
 
-CSSTransform('import variable map', () => {
+Importer('import variable map', () => {
   const input = [
     '@use "svelterial/Component" as c;',
     'h1 {color: c.$color}',
@@ -133,25 +133,11 @@ CSSTransform('import variable map', () => {
   snapshot(css, 'h1{color:red}');
 });
 
-CSSTransform('import single variable', () => {
-  const input = [
-    '@use "svelterial/Component?self" as c;',
-    'h1 {color: c.$default}',
-  ].join('\n');
-
-  const config = {
-    Component: 'red',
-  };
-
-  const { css } = compileSass(input, config);
-  snapshot(css, 'h1{color:red}');
-});
-
-CSSTransform('no error when import undefined', () => {
+Importer('no error when import undefined', () => {
   const input = '@use "svelterial/Component"';
 
   const { css } = compileSass(input, {});
   snapshot(css, '');
 });
 
-CSSTransform.run();
+Importer.run();
