@@ -110,11 +110,13 @@ importers:
       esm: ^3.2.25
       is-plain-object: ^5.0.0
       stylis: ^4.0.10
+      tippex: ^3.0.0
       uvu: ^0.5.1
     dependencies:
       esm: 3.2.25
       is-plain-object: 5.0.0
       stylis: 4.0.10
+      tippex: 3.0.0
       uvu: 0.5.1
 
 packages:
@@ -7075,6 +7077,9 @@ packages:
     resolution: {integrity: sha512-7cR8rLy2QhYHpsBDBVYnnWXm8uRTr38RoZakFSW7Bs7PzfMPNZthuMLkwqZv7MTu8lhQ91cOFYS5a7iFj2oR3w==}
     engines: {node: '>=4'}
     dev: false
+
+  /tippex/3.0.0:
+    resolution: {integrity: sha1-sXYJonzq/+B5ezhzk/2Zh45Nfqk=}
 
   /tmp/0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}

@@ -1,7 +1,14 @@
 import { dirname } from 'path';
-import { compileSass, globalStyles } from '@svelterialjs/plugin-utils';
+import {
+  compileSass,
+  globalStyles,
+  optimizeImports,
+} from '@svelterialjs/plugin-utils';
 
 export default (config = {}) => ({
+  script: ({ content }) => ({
+    code: optimizeImports(content),
+  }),
   style({ content, attributes: info, filename }) {
     if (!info.svelterial) return null;
 

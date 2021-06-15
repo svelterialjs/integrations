@@ -1,10 +1,8 @@
 import { suite } from 'uvu';
 import { snapshot } from 'uvu/assert';
-import globalStyles from '../src/globalStyles';
-import transform from '../src/variableTransformer';
-import compileSass from '../src/sass';
 
 const GlobalStyles = suite('GlobalStyles');
+import globalStyles from '../src/globalStyles';
 
 GlobalStyles('selectors', async () => {
   snapshot(globalStyles('a {display: flex;}'), ':global(a){display:flex;}');
@@ -44,6 +42,7 @@ GlobalStyles('keyframes', async () => {
 GlobalStyles.run();
 
 const VarTransform = suite('VarTransform');
+import transform from '../src/variableTransformer';
 
 VarTransform('string', () => {
   const values = {
@@ -115,9 +114,10 @@ VarTransform('nested', () => {
 
 VarTransform.run();
 
-const Importer = suite('Importer');
+const SassCompiler = suite('SassCompiler');
+import compileSass from '../src/sass';
 
-Importer('import variable map', () => {
+SassCompiler('import variable map', () => {
   const input = [
     '@use "svelterial/Component" as c;',
     'h1 {color: c.$color}',
@@ -133,11 +133,73 @@ Importer('import variable map', () => {
   snapshot(css, 'h1{color:red}');
 });
 
-Importer('no error when import undefined', () => {
+SassCompiler('no error when import undefined', () => {
   const input = '@use "svelterial/Component"';
 
   const { css } = compileSass(input, {});
   snapshot(css, '');
 });
 
-Importer.run();
+SassCompiler.run();
+
+const OptimizeImports = suite('OptimizeImports');
+import optimizeImports from '../src/optimizeImports';
+
+OptimizeImports('single quote import', () => {
+  const input = `import { C1 } from '@svelterialjs/random';`;
+  snapshot(
+    optimizeImports(input),
+    `import C1 from '@svelterialjs/random/src/C1.svelte';`
+  );
+});
+
+OptimizeImports('double quote import', () => {
+  const input = `import { C1 } from "@svelterialjs/random";`;
+  snapshot(
+    optimizeImports(input),
+    `import C1 from '@svelterialjs/random/src/C1.svelte';`
+  );
+});
+
+OptimizeImports('import everything', () => {
+  const input1 = `import * as C from '@svelterialjs/random';`;
+  snapshot(
+    optimizeImports(input1),
+    `import * as C from '@svelterialjs/random';`
+  );
+
+  const input2 = `import * from '@svelterialjs/random';`;
+  snapshot(optimizeImports(input2), `import * from '@svelterialjs/random';`);
+});
+
+OptimizeImports('import from inside a folder', () => {
+  const input = `import C1 from '@svelterialjs/random/folder';`;
+  snapshot(
+    optimizeImports(input),
+    `import C1 from '@svelterialjs/random/folder';`
+  );
+});
+
+OptimizeImports('multiple imports', () => {
+  const input = `import {C1, C2} from '@svelterialjs/random'`;
+  snapshot(
+    optimizeImports(input),
+    [
+      `import C1 from '@svelterialjs/random/src/C1.svelte';`,
+      `import C2 from '@svelterialjs/random/src/C2.svelte';`,
+    ].join('\n')
+  );
+});
+
+OptimizeImports('import as alias', () => {
+  const input = `import {C1, C2 as C3} from '@svelterialjs/random'`;
+  snapshot(
+    optimizeImports(input),
+    [
+      `import C1 from '@svelterialjs/random/src/C1.svelte';`,
+      `import C3 from '@svelterialjs/random/src/C2.svelte';`,
+    ].join('\n')
+  );
+});
+
+OptimizeImports.run();

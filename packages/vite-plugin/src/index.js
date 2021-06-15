@@ -1,4 +1,8 @@
-import { compileSass, globalStyles } from '@svelterialjs/plugin-utils';
+import {
+  compileSass,
+  globalStyles,
+  optimizeImports,
+} from '@svelterialjs/plugin-utils';
 import parseInfo from './parseInfo';
 import { dirname } from 'path';
 import { readFileSync } from 'fs';
@@ -8,11 +12,12 @@ export default (config = {}) => ({
   enforce: 'pre',
   sveltePreprocess: {
     script({ content, markup }) {
+      const optimized = optimizeImports(content);
       const info = parseInfo(markup);
       if (typeof info.svelterial !== 'string') return null;
-      const imported = `import 'svelterial:${info.svelterial}';\n\n`;
+      const imported = `import 'svelterial:${info.svelterial}';\n`;
       return {
-        code: imported + content,
+        code: imported + optimized,
       };
     },
     style({ content, attributes: info, filename }) {
