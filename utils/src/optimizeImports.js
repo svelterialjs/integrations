@@ -1,7 +1,7 @@
 import { replace } from 'tippex';
 
 export default (code) => {
-  const pattern = /import {(.+?)} from ['"]@svelterialjs\/(.+?)['"];?/g;
+  const pattern = /import {([\s\S]+?)} from ['"]@svelterialjs\/(.+?)['"];?/g;
   return replace(code, pattern, (match, _files, source) => {
     if (!source.includes('/')) {
       /** @type {Array<string>} */

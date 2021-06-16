@@ -202,4 +202,20 @@ OptimizeImports('import as alias', () => {
   );
 });
 
+OptimizeImports('multiple line import', () => {
+  const input = [
+    `import { C1,`,
+    `         C2,`,
+    `         C3 } from '@svelterialjs/random'`,
+  ].join('\n');
+  snapshot(
+    optimizeImports(input),
+    [
+      `import C1 from '@svelterialjs/random/src/C1.svelte';`,
+      `import C2 from '@svelterialjs/random/src/C2.svelte';`,
+      `import C3 from '@svelterialjs/random/src/C3.svelte';`,
+    ].join('\n')
+  );
+});
+
 OptimizeImports.run();
