@@ -11,6 +11,8 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
     "svelte": "^3.38.3",
     "vite": "^2.3.8",
-    "vite-plugin-svelte-svelterial": "workspace:*"
+    "vite-plugin-svelte-svelterial": "workspace:*",
+    "@svelterialjs/core": "workspace:*",
+    "@svelterialjs/component": "workspace:*"
   }
 }

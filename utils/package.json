@@ -8,6 +8,7 @@
   },
   "peerDependencies": {
     "sass": "^1.32.12",
+    "resolve": "^1.20.0",
     "svelte": "^3.38.2"
   },
   "dependencies": {

@@ -45,7 +45,8 @@
     "svelte": "^3.38.2"
   },
   "dependencies": {
-    "sass": "^1.35.1"
+    "sass": "^1.35.1",
+    "resolve": "^1.20.0"
   },
   "devDependencies": {
     "@svelterialjs/plugin-utils": "workspace:*",

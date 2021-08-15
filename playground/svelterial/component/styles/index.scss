@@ -1,0 +1,9 @@
+@import "@svelterialjs/core/utils/settings";
+
+button {
+  color: $color;
+}
+
+.rounded {
+  border-radius: 50%;
+}

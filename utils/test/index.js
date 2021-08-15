@@ -119,7 +119,7 @@ import compileSass from '../src/sass';
 
 SassCompiler('import variable map', () => {
   const input = [
-    '@use "svelterial/Component" as c;',
+    '@use "svelterial:config/Component" as c;',
     'h1 {color: c.$color}',
   ].join('\n');
 
@@ -134,7 +134,7 @@ SassCompiler('import variable map', () => {
 });
 
 SassCompiler('no error when import undefined', () => {
-  const input = '@use "svelterial/Component"';
+  const input = '@use "svelterial:config/Component"';
 
   const { css } = compileSass(input, {});
   snapshot(css, '');

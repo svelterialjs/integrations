@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "devDependencies": {
     "@svelterialjs/process": "workspace:*",
+    "@svelterialjs/core": "workspace:*",
+    "@svelterialjs/component": "workspace:*",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.6",
     "mini-css-extract-plugin": "^1.6.2",

@@ -11,6 +11,8 @@
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@svelterialjs/process": "workspace:*",
+    "@svelterialjs/core": "workspace:*",
+    "@svelterialjs/component": "workspace:*",
     "rollup": "^2.52.7",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.5",

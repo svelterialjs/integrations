@@ -1,0 +1,12 @@
+{
+  "name": "@svelterialjs/component",
+  "private": true,
+  "version": "1.0.0",
+  "module": "index.js",
+  "peerDependencies": {
+    "@svelterialjs/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@svelterialjs/core": "workspace:*"
+  }
+}

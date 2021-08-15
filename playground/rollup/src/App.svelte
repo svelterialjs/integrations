@@ -1,5 +1,6 @@
 <script>
-  import Component from './Component.svelte';
+  import Component from '@svelterialjs/component';
 </script>
 
 <Component />
+<Component rounded />
