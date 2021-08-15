@@ -6,10 +6,10 @@
     "@svelterialjs/process": "workspace:*",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.6",
-    "mini-css-extract-plugin": "^1.6.0",
+    "mini-css-extract-plugin": "^1.6.2",
     "svelte": "^3.38.3",
     "svelte-loader": "^3.1.2",
-    "webpack": "^5.40.0",
+    "webpack": "^5.42.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   },
