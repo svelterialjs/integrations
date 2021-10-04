@@ -1,5 +1,15 @@
 # vite-plugin-svelte-svelterial
 
+## 0.0.11
+
+### Patch Changes
+
+- 1d509f0: fixed bug with multiline imports
+- 5a6270d: add optimization for svelte imports
+- c589009: Use `svelterial:config/Component` instead of `svelterial/Component` to get the config provided by the user.
+- fb9fc04: update according to new api
+- c589009: Can now use node module resolution
+
 ## 0.0.10
 
 ### Patch Changes

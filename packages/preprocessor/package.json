@@ -1,6 +1,6 @@
 {
   "name": "@svelterialjs/process",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A Svelte preprocessor for Svelterial.",
   "source": "src/index.js",
   "main": "dist/index.cjs",

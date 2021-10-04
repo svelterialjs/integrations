@@ -1,5 +1,14 @@
 # @svelterialjs/process
 
+## 0.0.9
+
+### Patch Changes
+
+- 1d509f0: fixed bug with multiline imports
+- 5a6270d: add optimization for svelte imports
+- c589009: Use `svelterial:config/Component` instead of `svelterial/Component` to get the config provided by the user.
+- c589009: Can now use node module resolution
+
 ## 0.0.8
 
 ### Patch Changes
