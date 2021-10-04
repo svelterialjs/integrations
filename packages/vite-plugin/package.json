@@ -44,8 +44,8 @@
     "vite": "^2.2.4"
   },
   "dependencies": {
-    "sass": "^1.35.1",
-    "resolve": "^1.20.0"
+    "resolve": "^1.20.0",
+    "sass": "^1.42.1"
   },
   "devDependencies": {
     "@svelterialjs/plugin-utils": "workspace:*",

@@ -9,10 +9,10 @@
   },
   "devDependencies": {
     "@sveltejs/kit": "next",
-    "svelte": "^3.38.3",
-    "vite-plugin-svelte-svelterial": "workspace:*",
+    "@svelterialjs/component": "workspace:*",
     "@svelterialjs/core": "workspace:*",
-    "@svelterialjs/component": "workspace:*"
+    "svelte": "^3.43.1",
+    "vite-plugin-svelte-svelterial": "workspace:*"
   },
   "type": "module"
 }
