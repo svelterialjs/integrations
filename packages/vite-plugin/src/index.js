@@ -10,25 +10,27 @@ import { readFileSync } from 'fs';
 export default (config = {}) => ({
   name: 'vite-plugin-svelte-svelterial',
   enforce: 'pre',
-  sveltePreprocess: {
-    script({ content, markup }) {
-      const optimized = optimizeImports(content);
-      const info = parseInfo(markup);
-      if (typeof info.svelterial !== 'string') return null;
-      const imported = `import 'svelterial:${info.svelterial}';\n`;
-      return {
-        code: imported + optimized,
-      };
-    },
-    style({ content, attributes: info, filename }) {
-      if (!info.svelterial || typeof info.svelterial === 'string') return null;
-      const output = compileSass(content, config, {
-        includePaths: [dirname(filename)],
-      });
-      return {
-        code: globalStyles(output.css),
-        dependencies: output.deps,
-      };
+  api: {
+    sveltePreprocess: {
+      script({ content, markup }) {
+        const optimized = optimizeImports(content);
+        const info = parseInfo(markup);
+        if (typeof info.svelterial !== 'string') return null;
+        const imported = `import 'svelterial:${info.svelterial}';\n`;
+        return {
+          code: imported + optimized,
+        };
+      },
+      style({ content, attributes: info, filename }) {
+        if (!info.svelterial || typeof info.svelterial === 'string') return null;
+        const output = compileSass(content, config, {
+          includePaths: [dirname(filename)],
+        });
+        return {
+          code: globalStyles(output.css),
+          dependencies: output.deps,
+        };
+      },
     },
   },
   async resolveId(id, importer) {
